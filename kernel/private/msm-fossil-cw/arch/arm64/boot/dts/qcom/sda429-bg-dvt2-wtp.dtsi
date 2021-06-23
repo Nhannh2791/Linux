@@ -51,7 +51,7 @@
 
 	cd-gpios = <&tlmm 67 0x1>;
 
-	status = "disabled";
+	status = "ok"; /*nhnhan*/
 };
 
 &pm660_gpios {
