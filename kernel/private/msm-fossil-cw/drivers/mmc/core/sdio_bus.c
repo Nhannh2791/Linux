@@ -146,6 +146,10 @@ static int sdio_bus_probe(struct device *dev)
 	if (ret == -EPROBE_DEFER)
 		return ret;
 
+	/* Changed by NHNHAN */
+	printk ("SDIO-LOG: SDIO BUS PROBE");
+
+
 	/* Unbound SDIO functions are always suspended.
 	 * During probe, the function is set active and the usage count
 	 * is incremented.  If the driver supports runtime PM,

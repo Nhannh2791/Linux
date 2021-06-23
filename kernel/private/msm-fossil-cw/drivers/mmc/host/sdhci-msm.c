@@ -4698,6 +4698,9 @@ static int sdhci_msm_probe(struct platform_device *pdev)
 	unsigned long flags;
 	bool force_probe;
 
+	/*Changed by NHNHAN */	
+	printk("SDHCI-LOG: SDHCI PROBED");
+
 	pr_debug("%s: Enter %s\n", dev_name(&pdev->dev), __func__);
 	msm_host = devm_kzalloc(&pdev->dev, sizeof(struct sdhci_msm_host),
 				GFP_KERNEL);
