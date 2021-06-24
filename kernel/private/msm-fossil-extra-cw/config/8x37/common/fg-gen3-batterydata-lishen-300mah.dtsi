@@ -1,0 +1,75 @@
+
+qcom,4198837_compal_fft1_300mah_averaged_masterslave_nov1st2019 {
+	qcom, = <24>;
+	/* #4198837_Compal_FFT1_300mAh_averaged_MasterSlave_Nov1st2019*/
+	qcom,max-voltage-uv = <4395000>;
+	qcom,fg-cc-cv-threshold-mv = <4385>;
+	qcom,fastchg-current-ma = <300>;
+	qcom,nom-batt-capacity-mah = <300>;
+	/* add another jeita setting for 2nd battery*/
+	qcom,bp-jeita-soft-hot-fv-cc = <4200 150>;
+	qcom,bp-jeita-soft-cold-fv-cc = <4400 60>;
+	qcom,batt-id-kohm = <60>;
+	qcom,battery-beta = <4250>;
+	qcom,battery-type = "hoki_lishen_300mah_nov1st2019";
+	qcom,checksum = <0xC0DA>;
+	qcom,gui-version = "PM660GUI - 0.0.0.45";
+	qcom,fg-profile-data = [
+		 6E 1E 63 F4
+		 73 02 A4 EC
+		 CF 1C 26 02
+		 66 0D FF 0A
+		 7A 19 22 22
+		 C4 3C 6C 4B
+		 66 00 00 00
+		 14 00 00 00
+		 00 00 02 C5
+		 0F C5 CB C2
+		 4A 00 08 00
+		 57 E3 E3 EC
+		 64 06 20 01
+		 4F 05 59 01
+		 65 FC 51 32
+		 21 06 09 20
+		 27 00 14 00
+		 3D 1F AB FC
+		 93 03 21 F4
+		 D9 1C C4 02
+		 4F 0C 05 12
+		 AB 18 05 2A
+		 9D 4D E7 5B
+		 67 00 00 00
+		 0D 00 00 00
+		 00 00 54 CC
+		 01 00 62 C2
+		 38 00 00 00
+		 92 00 E3 EC
+		 BD F5 2C EA
+		 CD DB FF 01
+		 96 00 60 12
+		 99 33 CC FF
+		 07 10 00 00
+		 3E 01 51 46
+		 38 00 40 00
+		 B7 05 0A FA
+		 FF 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+		 00 00 00 00
+	];
+};

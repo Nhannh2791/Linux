@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+&tlmm {
+	tlmm_gpio_key {
+		gpio_key_active: gpio_key_active {
+		mux {
+			pins = "gpio35";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio35";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+		};
+
+		gpio_key_suspend: gpio_key_suspend {
+			mux {
+				pins = "gpio35";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio35";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+	};
+};
+
+&gpio_keys {
+	compatible = "gpio-keys";
+	label = "gpio-keys";
+	pinctrl-names = "default";
+	pinctrl-0 = <&gpio_key_active>;
+	pinctrl-1 = <&gpio_key_suspend>;
+	vol_up: vol_up {
+		/* Disable vol_up key to use stem_1 instead */
+		status = "disabled";
+	};
+	function_1: function_1 {
+		status = "disabled";
+	};
+	function_2: function_2 {
+		status = "disabled";
+	};
+	stem_1 {
+		label = "STEM_1";
+		gpios = <&tlmm 35 0x1>;
+		linux,input-type = <1>;
+		linux,code = <265>;
+		gpio-key,wakeup;
+		linux,can-disable;
+		debounce-interval = <15>;
+	};
+};
+
+&pm660_pon {
+	qcom,pon_2 {
+		linux,code = <266>;
+	};
+};

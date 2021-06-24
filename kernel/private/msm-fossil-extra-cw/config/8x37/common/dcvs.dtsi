@@ -1,0 +1,43 @@
+/*
+ * Copyright (c) 2015-2019, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+&msm_gpu {
+	qcom,initial-pwrlevel = <0>;
+	/* Power levels */
+	qcom,gpu-pwrlevels {
+		qcom,gpu-pwrlevel@0 {
+			reg = <0>;
+			qcom,gpu-freq = <320000000>;
+			qcom,bus-freq = <2>;
+			qcom,bus-min = <2>;
+			qcom,bus-max = <2>;
+		};
+		qcom,gpu-pwrlevel@1 {
+			reg = <1>;
+			qcom,gpu-freq = <19200000>;
+			qcom,bus-freq = <0>;
+			qcom,bus-min = <0>;
+			qcom,bus-max = <0>;
+		};
+	};
+};
+
+/* CPU freqs */
+&msm_cpufreq {
+	qcom,cpufreq-table =
+		<  960000 >, /* BW_OPP_ENTRY( 211,8);  2265 MB/s */
+		< 1305600 >, /* BW_OPP_ENTRY( 384, 8); 4539 MB/s */
+		< 1497600 >, /* BW_OPP_ENTRY( 662, 8);  5416 MB/s */
+		< 1708800 >, /* BW_OPP_ENTRY( 662, 8); */
+		< 2016000 >; /* BW_OPP_ENTRY( 749, 8) */
+};

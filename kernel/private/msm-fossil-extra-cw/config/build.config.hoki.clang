@@ -1,0 +1,21 @@
+#include common config
+source build.config.common
+
+BRANCH=android-msm-hoki-4.14
+DEFCONFIG=hoki-perf_defconfig
+PREBUILT_KERNEL_REPO=device/fossil/hoki-kernel
+KERNEL_BUILD_BRANCH=android-msm-hoki-4.14
+
+CC=${CLANG_PREBUILT_BIN}/clang
+
+# Update PATH for CLANG
+export PATH=${CLANG_PREBUILT_BIN}:${PATH}
+
+# For DTC
+DTC_EXT=$(pwd)/prebuilts-master/misc/linux-x86/dtc/dtc
+CONFIG_BUILD_ARM64_DT_OVERLAY=y
+
+# Target dtbo
+FILES="${FILES}
+hoki-overlay.dtbo
+"
