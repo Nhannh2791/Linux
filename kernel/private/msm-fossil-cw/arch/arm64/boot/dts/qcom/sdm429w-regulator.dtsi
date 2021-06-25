@@ -475,28 +475,29 @@
 	};
 
 
-	  /*nhnhan*/
+	/*nhnhan*/
  	vsdc2: regulator_sdio {
-    		compatible = "regulator-fixed";
-    		status = "okay";
-	  	regulator-name = "vsdc2";
+    compatible = "regulator-fixed";
+    status = "okay";
+	  regulator-name = "vsdc2";
 	 	enable-active-high;
-	  	gpio = <&tlmm 63 0>;
-    		regulator-always-on;
-  	};
+	  gpio = <&tlmm 63 0>;
+    regulator-always-on;
+  };
 
-  	wlreg_on: regulator_wlreg {
-    		compatible = "regulator-fixed";
-    		status = "okay";
-    		regulator-name = "wlreg_on";
-    		enable-active-high;
-    		gpio = <&tlmm 91 1>;
-    		startup-delay-us = <100>;
-    		regulator-alway-on;
-  		};
+  wlreg_on: regulator_wlreg {
+    compatible = "regulator-fixed";
+    status = "okay";
+    regulator-name = "wlreg_on";
+    enable-active-high;
+    gpio = <&tlmm 91 1>;
+    startup-delay-us = <100>;
+    regulator-alway-on;
+  };
 
-  	brcmfmac: brcmfmac@0 {
-  		compatible = "brcm,android-fmac";
-  		wlreg_on-supply = <&wlreg_on>;
-  	};
+  brcmfmac: brcmfmac@0 {
+  	compatible = "brcm,android-fmac";
+  	wlreg_on-supply = <&wlreg_on>;
+  };
+  /*nhnhan*/
 };

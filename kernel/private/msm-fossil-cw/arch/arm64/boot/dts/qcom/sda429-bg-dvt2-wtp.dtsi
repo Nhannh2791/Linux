@@ -35,6 +35,7 @@
 };
 
 &sdhc_2 {
+  qcom,core_3_0v_support; /*nhnhan*/
 	/* device core power supply for sd card*/
 	vdd-supply = <&vreg_sd_vdd>;
 	qcom,vdd-voltage-level = <2950000 2950000>;
@@ -42,9 +43,10 @@
 
 	/* device communication power supply for msm_io*/
 	vdd-io-supply = <&vreg_sd_pad>;
-	qcom,vdd-io-voltage-level = <1800000 2950000>;
+	qcom,vdd-io-voltage-level = <1800000 1800000>; /*nhnhan*/
 	qcom,vdd-io-current-level = <200 22000>;
-
+  qcom,max-frequency=<25000000>; /*nhnhan*/
+  interrupts = <0 1>; /*nhnhan*/
 	pinctrl-names = "active", "sleep";
 	pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
 	pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
