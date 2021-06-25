@@ -14,6 +14,43 @@
 #include "sdm429-bg-soc.dtsi"
 #include "sdm429-board-common.dtsi"
 
+&soc { /*nhnhan*/
+  qcom,smdtty { /*nhnhan*/
+    status = "disabled";
+  };
+
+	qcom,pronto@a21b000 { /*nhnhan*/
+    status = "disabled";
+  };
+
+	qcom,wcnss-wlan@0a000000 { /*nhnhan*/
+    status = "disabled";
+  };
+
+  vsdc2: regulator_sdio { /*nhnhan*/
+    compatible = "regulator-fixed";
+    status = "okay";
+    regulator-name = "vsdc2";
+    enable-active-high;
+    gpio = <&tlmm 63 1>;
+    regulator-always-on;
+  };
+
+  wlreg_on: regulator_wlreg { /*nhnhan*/
+    compatible = "regulator-fixed";
+    status = "okay";
+    regulator-name = "wlreg_on";
+    enable-active-high;
+    gpio = <&tlmm 34 0>;
+    startup-delay-us = <100>;
+    regulator-always-on;
+  };
+
+  brcmfmac: brcmfmac@0 { /*nhnhan*/
+    compatible = "brcm,android-fmac";
+    wlreg_on_supply = <&wlreg_on>;
+  };
+};
 &sdhc_1 {
 	/* device core power supply */
 	vdd-supply = <&L19A>;
@@ -35,6 +72,7 @@
 };
 
 &sdhc_2 {
+
   qcom,core_3_0v_support; /*nhnhan*/
 	/* device core power supply for sd card*/
 	vdd-supply = <&vreg_sd_vdd>;
@@ -43,16 +81,18 @@
 
 	/* device communication power supply for msm_io*/
 	vdd-io-supply = <&vreg_sd_pad>;
-	qcom,vdd-io-voltage-level = <1800000 1800000>; /*nhnhan*/
+	qcom,vdd-io-voltage-level = <1800000 1800000>;
 	qcom,vdd-io-current-level = <200 22000>;
-  qcom,max-frequency=<25000000>; /*nhnhan*/
-  interrupts = <0 1>; /*nhnhan*/
+
 	pinctrl-names = "active", "sleep";
 	pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
 	pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
 
-	cd-gpios = <&tlmm 67 0x1>;
-
+	/* cd-gpios = <&tlmm 67 0x1>; */ /*nhnhan*/
+  cd-gpios; /*nhnhan*/
+  qcom,sdio-customize; /*nhnhan*/
+  qcom,max-frequency = <25000000>; /*nhnhan*/
+  interrupts = <0 1>; /*nhnhan*/
 	status = "ok"; /*nhnhan*/
 };
 
