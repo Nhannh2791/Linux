@@ -119,7 +119,7 @@ sdio_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
 			"SDIO_CLASS=%02X", func->class))
 		return -ENOMEM;
 
-	if (add_uevent_var(env, 
+	if (add_uevent_var(env,
 			"SDIO_ID=%04X:%04X", func->vendor, func->device))
 		return -ENOMEM;
 
@@ -146,8 +146,7 @@ static int sdio_bus_probe(struct device *dev)
 	if (ret == -EPROBE_DEFER)
 		return ret;
 
-	/* Changed by NHNHAN */
-	printk ("SDIO-LOG: SDIO BUS PROBE");
+	printk ("[NHAN][SDIO-LOG]: sdio_bus_probe\n"); /*nhnhan*/
 
 
 	/* Unbound SDIO functions are always suspended.

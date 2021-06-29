@@ -2390,6 +2390,7 @@ static int sdhci_msm_vreg_init_reg(struct device *dev,
 
 	/* Get the regulator handle */
 	vreg->reg = devm_regulator_get(dev, vreg->name);
+	printk("[NHAN][SDHCI-LOG]: sdhci_msm_vreg_init_reg - Vdd IO name = %s\n", vreg->name); /*nhnhan*/
 	if (IS_ERR(vreg->reg)) {
 		ret = PTR_ERR(vreg->reg);
 		pr_err("%s: devm_regulator_get(%s) failed. ret=%d\n",
@@ -2560,15 +2561,17 @@ static int sdhci_msm_vreg_init(struct device *dev,
 
 	curr_slot = pdata->vreg_data;
 	if (!curr_slot)
+	{
 		goto out;
-
+	}
 	curr_vdd_reg = curr_slot->vdd_data;
 	curr_vdd_io_reg = curr_slot->vdd_io_data;
 
 	if (!is_init)
+	{
 		/* Deregister all regulators from regulator framework */
 		goto vdd_io_reg_deinit;
-
+	}
 	/*
 	 * Get the regulator handle from voltage regulator framework
 	 * and then try to set the voltage level for the regulator
@@ -2576,16 +2579,22 @@ static int sdhci_msm_vreg_init(struct device *dev,
 	if (curr_vdd_reg) {
 		ret = sdhci_msm_vreg_init_reg(dev, curr_vdd_reg);
 		if (ret)
+		{
 			goto out;
+		}
 	}
 	if (curr_vdd_io_reg) {
 		ret = sdhci_msm_vreg_init_reg(dev, curr_vdd_io_reg);
 		if (ret)
+		{
 			goto vdd_reg_deinit;
+		}
 	}
 
 	if (ret)
+	{
 		dev_err(dev, "vreg reset failed (%d)\n", ret);
+	}
 	goto out;
 
 vdd_io_reg_deinit:
@@ -4698,8 +4707,7 @@ static int sdhci_msm_probe(struct platform_device *pdev)
 	unsigned long flags;
 	bool force_probe;
 
-	/*Changed by NHNHAN */	
-	printk("SDHCI-LOG: SDHCI PROBED");
+	printk("[NHAN][SDHCI-LOG]: sdhci_msm_probe\n"); /*nhnhan*/
 
 	pr_debug("%s: Enter %s\n", dev_name(&pdev->dev), __func__);
 	msm_host = devm_kzalloc(&pdev->dev, sizeof(struct sdhci_msm_host),

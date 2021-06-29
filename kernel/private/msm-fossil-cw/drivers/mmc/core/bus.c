@@ -113,7 +113,7 @@ static int mmc_bus_probe(struct device *dev)
 {
 	struct mmc_driver *drv = to_mmc_driver(dev->driver);
 	struct mmc_card *card = mmc_dev_to_card(dev);
-
+	printk("[NHAN][MMC-LOG]: mmc_bus_probe\n"); /*nhnhan*/
 	return drv->probe(card);
 }
 
@@ -240,6 +240,7 @@ static struct bus_type mmc_bus_type = {
 
 int mmc_register_bus(void)
 {
+	printk("[NHAN][MMC-LOG]: mmc_register_bus\n"); /*nhnhan*/
 	return bus_register(&mmc_bus_type);
 }
 
@@ -255,6 +256,7 @@ void mmc_unregister_bus(void)
 int mmc_register_driver(struct mmc_driver *drv)
 {
 	drv->drv.bus = &mmc_bus_type;
+	printk("[NHAN][MMC-LOG]: mmc_register_driver\n"); /*nhnhan*/
 	return driver_register(&drv->drv);
 }
 
