@@ -1210,7 +1210,7 @@ int mmc_attach_sdio(struct mmc_host *host)
 	if (host->ocr_avail_sdio)
 		host->ocr_avail = host->ocr_avail_sdio;
 
-	printk("[NHAN][MMC-LOG]: mmc_attach_sdio\n"); /*nhnhan*/
+	printk("[NHAN][MMC-LOG] mmc1: mmc_attach_sdio\n"); /*nhnhan*/
 
 
 	rocr = mmc_select_voltage(host, ocr);

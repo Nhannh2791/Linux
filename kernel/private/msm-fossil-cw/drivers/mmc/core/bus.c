@@ -72,19 +72,23 @@ mmc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
 	struct mmc_card *card = mmc_dev_to_card(dev);
 	const char *type;
 	int retval = 0;
-
+	printk("[NHAN][MMC-LOG] mmc1: mmc_bus_uevent\n"); /*nhnhan*/
 	switch (card->type) {
 	case MMC_TYPE_MMC:
 		type = "MMC";
+		printk("[NHAN][MMC-LOG] mmc1: mmc_bus_uevent - MMC\n"); /*nhnhan*/
 		break;
 	case MMC_TYPE_SD:
 		type = "SD";
+		printk("[NHAN][MMC-LOG] mmc1: mmc_bus_uevent - SD\n"); /*nhnhan*/
 		break;
 	case MMC_TYPE_SDIO:
 		type = "SDIO";
+		printk("[NHAN][MMC-LOG] mmc1: mmc_bus_uevent - SDIO\n"); /*nhnhan*/
 		break;
 	case MMC_TYPE_SD_COMBO:
 		type = "SDcombo";
+		printk("[NHAN][MMC-LOG] mmc1: mmc_bus_uevent - SDcombo\n"); /*nhnhan*/
 		break;
 	default:
 		type = NULL;
@@ -113,7 +117,7 @@ static int mmc_bus_probe(struct device *dev)
 {
 	struct mmc_driver *drv = to_mmc_driver(dev->driver);
 	struct mmc_card *card = mmc_dev_to_card(dev);
-	printk("[NHAN][MMC-LOG]: mmc_bus_probe\n"); /*nhnhan*/
+	printk("[NHAN][MMC-LOG] mmc1: mmc_bus_probe\n"); /*nhnhan*/
 	return drv->probe(card);
 }
 
@@ -240,7 +244,7 @@ static struct bus_type mmc_bus_type = {
 
 int mmc_register_bus(void)
 {
-	printk("[NHAN][MMC-LOG]: mmc_register_bus\n"); /*nhnhan*/
+	printk("[NHAN][MMC-LOG] mmc1: mmc_register_bus\n"); /*nhnhan*/
 	return bus_register(&mmc_bus_type);
 }
 
@@ -256,7 +260,7 @@ void mmc_unregister_bus(void)
 int mmc_register_driver(struct mmc_driver *drv)
 {
 	drv->drv.bus = &mmc_bus_type;
-	printk("[NHAN][MMC-LOG]: mmc_register_driver\n"); /*nhnhan*/
+	printk("[NHAN][MMC-LOG] mmc1: mmc_register_driver\n"); /*nhnhan*/
 	return driver_register(&drv->drv);
 }
 

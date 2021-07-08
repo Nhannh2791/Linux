@@ -801,7 +801,7 @@ struct device_type sd_type = {
  */
 int mmc_sd_get_cid(struct mmc_host *host, u32 ocr, u32 *cid, u32 *rocr)
 {
-    printk("[NHAN][MMC-LOG]: mmc_sd_get_cid\n"); /*nhnhan*/
+    printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid\n"); /*nhnhan*/
     int err;
     u32 max_current;
     int retries = 10;
@@ -834,7 +834,7 @@ try_again:
     }
     else /*nhnhan*/
     {
-        printk("[NHAN][MMC-LOG]: mmc_sd_get_cid - err001\n"); /*nhnhan*/
+        printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid - err001\n"); /*nhnhan*/
     } /*nhnhan*/
     /*
      * If the host supports one of UHS-I modes, request the card
@@ -855,7 +855,7 @@ try_again:
     err = mmc_send_app_op_cond(host, ocr, rocr);
     if (err)
     {
-        printk("[NHAN][MMC-LOG]: mmc_sd_get_cid - err002\n"); /*nhnhan*/
+        printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid - err002\n"); /*nhnhan*/
         return err;
     }
     /*
@@ -866,11 +866,11 @@ try_again:
        ((*rocr & 0x41000000) == 0x41000000)) {
         err = mmc_set_uhs_voltage(host, pocr);
         if (err == -EAGAIN) {
-            printk("[NHAN][MMC-LOG]: mmc_sd_get_cid - err003\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid - err003\n"); /*nhnhan*/
             retries--;
             goto try_again;
         } else if (err) {
-            printk("[NHAN][MMC-LOG]: mmc_sd_get_cid - err004\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid - err004\n"); /*nhnhan*/
             retries = 0;
             goto try_again;
         }
@@ -879,7 +879,7 @@ try_again:
     err = mmc_send_cid(host, cid);
     if (err) /*nhnhan*/
     {
-        printk("[NHAN][MMC-LOG]: mmc_sd_get_cid - err005\n"); /*nhnhan*/
+        printk("[NHAN][MMC-LOG] mmc1: mmc_sd_get_cid - err005\n"); /*nhnhan*/
     } /*nhnhan*/
 
     return err;
@@ -1037,7 +1037,7 @@ unsigned mmc_sd_get_max_clock(struct mmc_card *card)
 static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
     struct mmc_card *oldcard)
 {
-    printk("[NHAN][MMC-LOG]: mmc_sd_init_card\n"); /*nhnhan*/
+    printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card\n"); /*nhnhan*/
     struct mmc_card *card;
     int err;
     u32 cid[4];
@@ -1048,13 +1048,13 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
     err = mmc_sd_get_cid(host, ocr, cid, &rocr);
     if (err)
     {
-        printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err001\n"); /*nhnhan*/
+        printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err001\n"); /*nhnhan*/
         return err;
     }
     if (oldcard) {
         if (memcmp(cid, oldcard->raw_cid, sizeof(cid)) != 0)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err002\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err002\n"); /*nhnhan*/
             return -ENOENT;
         }
         card = oldcard;
@@ -1065,7 +1065,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         card = mmc_alloc_card(host, &sd_type);
         if (IS_ERR(card))
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err003\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err003\n"); /*nhnhan*/
             return PTR_ERR(card);
         }
         card->ocr = ocr;
@@ -1086,7 +1086,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         err = mmc_send_relative_addr(host, &card->rca);
         if (err)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err004\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err004\n"); /*nhnhan*/
             goto free_card;
         }
         host->card = card;
@@ -1096,7 +1096,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         err = mmc_sd_get_csd(host, card);
         if (err)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err005\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err005\n"); /*nhnhan*/
             goto free_card;
         }
         mmc_decode_cid(card);
@@ -1116,7 +1116,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         err = mmc_select_card(card);
         if (err)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err006\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err006\n"); /*nhnhan*/
             goto free_card;
         }
     }
@@ -1124,7 +1124,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
     err = mmc_sd_setup_card(host, card, oldcard != NULL);
     if (err)
     {
-        printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err007\n"); /*nhnhan*/
+        printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err007\n"); /*nhnhan*/
         goto free_card;
     }
     /* Initialization sequence for UHS-I cards */
@@ -1132,7 +1132,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         err = mmc_sd_init_uhs_card(card);
         if (err)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err008\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err008\n"); /*nhnhan*/
             goto free_card;
         }
     } else {
@@ -1142,12 +1142,12 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
         err = mmc_sd_switch_hs(card);
         if (err > 0)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err009\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err009\n"); /*nhnhan*/
             mmc_set_timing(card->host, MMC_TIMING_SD_HS);
         }
         else if (err)
         {
-            printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err010\n"); /*nhnhan*/
+            printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err010\n"); /*nhnhan*/
             goto free_card;
         }
 
@@ -1164,7 +1164,7 @@ static int mmc_sd_init_card(struct mmc_host *host, u32 ocr,
             err = mmc_app_set_bus_width(card, MMC_BUS_WIDTH_4);
             if (err)
             {
-                printk("[NHAN][MMC-LOG]: mmc_sd_init_card - err011\n"); /*nhnhan*/
+                printk("[NHAN][MMC-LOG] mmc1: mmc_sd_init_card - err011\n"); /*nhnhan*/
                 goto free_card;
             }
 

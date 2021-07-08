@@ -2312,13 +2312,13 @@ EXPORT_SYMBOL(mmc_put_card);
 static inline void mmc_set_ios(struct mmc_host *host)
 {
 	struct mmc_ios *ios = &host->ios;
-	printk("[NHAN][MMC-LOG]: mmc_set_ios\n"); /*nhnhan*/
-	printk("[NHAN][MMC-LOG]: %s: clock %uHz busmode %u powermode %u cs %u Vdd %u "
+	/* printk("[NHAN][MMC-LOG] mmc1: mmc_set_ios\n");*/ /*nhnhan*/
+  printk("[NHAN][MMC-LOG]: %s: clock %uHz busmode %u powermode %u cs %u Vdd %u "
 		"width %u timing %u\n",
 		 mmc_hostname(host), ios->clock, ios->bus_mode,
 		 ios->power_mode, ios->chip_select, ios->vdd,
 		 1 << ios->bus_width, ios->timing);
-		 
+
 	pr_debug("%s: clock %uHz busmode %u powermode %u cs %u Vdd %u "
 		"width %u timing %u\n",
 		 mmc_hostname(host), ios->clock, ios->bus_mode,
@@ -2960,7 +2960,7 @@ int mmc_set_signal_voltage(struct mmc_host *host, int signal_voltage)
 
 int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 {
-	printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage\n"); /*nhnhan*/
+	printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage\n"); /*nhnhan*/
 	struct mmc_command cmd = {};
 	int err = 0;
 	u32 clock;
@@ -2971,7 +2971,7 @@ int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 	 */
 	if (!host->ops->start_signal_voltage_switch)
 	{
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err001\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err001\n"); /*nhnhan*/
 		return -EPERM;
 	}
 	if (!host->ops->card_busy)
@@ -2990,12 +2990,12 @@ int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 	err = mmc_wait_for_cmd(host, &cmd, 0);
 	if (err)
 	{
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err002\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err002\n"); /*nhnhan*/
 		goto err_command;
 	}
 	if (!mmc_host_is_spi(host) && (cmd.resp[0] & R1_ERROR)) {
 		err = -EIO;
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err003\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err003\n"); /*nhnhan*/
 		goto err_command;
 	}
 	/*
@@ -3004,7 +3004,7 @@ int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 	 */
 	mmc_delay(1);
 	if (host->ops->card_busy && !host->ops->card_busy(host)) {
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err004\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err004\n"); /*nhnhan*/
 		err = -EAGAIN;
 		goto power_cycle;
 	}
@@ -3022,7 +3022,7 @@ int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 		 * Voltages may not have been switched, but we've already
 		 * sent CMD11, so a power cycle is required anyway
 		 */
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err005\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err005\n"); /*nhnhan*/
 		err = -EAGAIN;
 		host->ios.clock = clock;
 		mmc_set_ios(host);
@@ -3045,7 +3045,7 @@ int mmc_set_uhs_voltage(struct mmc_host *host, u32 ocr)
 	 */
 	if (host->ops->card_busy && host->ops->card_busy(host))
 	{
-		printk("[NHAN][MMC-LOG]: mmc_set_uhs_voltage - err006\n"); /*nhnhan*/
+		printk("[NHAN][MMC-LOG] mmc1: mmc_set_uhs_voltage - err006\n"); /*nhnhan*/
 		err = -EAGAIN;
 	}
 power_cycle:

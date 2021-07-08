@@ -14,29 +14,22 @@
 #include "sdm429-bg-soc.dtsi"
 #include "sdm429-board-common.dtsi"
 
-&soc { /*nhnhan*/
+&soc { /*nhnhan: overlay device tree node*/
 
-//  qcom,smdtty { /*nhnhan*/
-//      status = "disabled";
-//  };
+    qcom,smdtty { /*nhnhan*/
+        status = "disabled";
+    };
 
-    qcom,pronto@a21b000 { /*nhnhan*/
+    qcom,pronto@a21b000 { /*nhnhan: disable pronto module*/
         status = "disabled";
     };
 
 
-//	qcom,wcnss-wlan@0a000000 { /*nhnhan*/
-//    status = "disabled";
-//  };
+//  	qcom,wcnss-wlan@0a000000 { /*nhnhan*/
+//       status = "disabled";
+//    };
 
-    vreg_io_vdd: vreg_io_vdd { /*nhnhan*/
-        compatible = "regulator-fixed";
-        regulator-name = "io_vdd";
-        regulator-min-microvolt = <1800000>;
-        regulator-max-microvolt = <1800000>;
-    };
-
-    vsdc2: regulator_sdio { /*nhnhan*/
+    vsdc2: regulator_sdio { /*nhnhan: enable SD_ELDO_EN */
         compatible = "regulator-fixed";
         status = "okay";
         regulator-name = "vsdc2";
@@ -45,39 +38,40 @@
         regulator-always-on;
     };
 
-    wlreg_on: regulator_wlreg { /*nhnhan*/
+    wlreg_on: regulator_wlreg { /*nhnhan: enable Cypress Wlan*/
         compatible = "regulator-fixed";
         status = "okay";
         regulator-name = "wlreg_on";
         enable-active-high;
-        gpio = <&tlmm 34 0>;
+        gpio = <&tlmm 58 1>;
         startup-delay-us = <100>;
-        regulator-always-on;
+        /* regulator-always-on; */
     };
 
-    brcmfmac: brcmfmac@0 { /*nhnhan*/
+    brcmfmac: brcmfmac@0 { /*nhnhan: enable driver of brcm */
         compatible = "brcm,android-fmac";
         wlreg_on_supply = <&wlreg_on>;
+        status = "okay";
     };
 };
 &sdhc_1 {
-	/* device core power supply */
-	vdd-supply = <&L19A>;
-	qcom,vdd-voltage-level = <2900000 3200000>;
-	qcom,vdd-current-level = <200 570000>;
+	  /* device core power supply */
+	  vdd-supply = <&L19A>;
+	  qcom,vdd-voltage-level = <2900000 3200000>;
+	  qcom,vdd-current-level = <200 570000>;
 
-	/* device communication power supply */
-	vdd-io-supply = <&L13A>;
-	qcom,vdd-io-always-on;
-	qcom,vdd-io-lpm-sup;
-	qcom,vdd-io-voltage-level = <1800000 1800000>;
-	qcom,vdd-io-current-level = <0 60000>;
+	  /* device communication power supply */
+	  vdd-io-supply = <&L13A>;
+	  qcom,vdd-io-always-on;
+	  qcom,vdd-io-lpm-sup;
+	  qcom,vdd-io-voltage-level = <1800000 1800000>;
+	  qcom,vdd-io-current-level = <0 60000>;
 
-	pinctrl-names = "active", "sleep";
-	pinctrl-0 = <&sdc1_clk_on &sdc1_cmd_on &sdc1_data_on &sdc1_rclk_on>;
-	pinctrl-1 = <&sdc1_clk_off &sdc1_cmd_off &sdc1_data_off &sdc1_rclk_off>;
+	  pinctrl-names = "active", "sleep";
+	  pinctrl-0 = <&sdc1_clk_on &sdc1_cmd_on &sdc1_data_on &sdc1_rclk_on>;
+	  pinctrl-1 = <&sdc1_clk_off &sdc1_cmd_off &sdc1_data_off &sdc1_rclk_off>;
 
-	status = "ok";
+	  status = "ok";
 };
 
 &sdhc_2 {
@@ -89,23 +83,34 @@
 	  qcom,vdd-current-level = <15000 800000>;
 
 	  /* device communication power supply for msm_io*/
-	  //vdd-io-supply = <&vreg_sd_pad>;
-    vdd-io-supply = <&vreg_io_vdd>;  /*nhnhan*/
-    qcom,vdd-io-voltage-level = <1800000 1800000>;
+	  /* vdd-io-supply = <&vreg_sd_pad>; */ /*nhnhan: change vdd-io-supply*/
+
+    vdd-io-supply = <&vsdc2>;  /*nhnhan: enable vdd-io supply by
+                                         regulator-fixed gpio63 */
+
+    qcom,vdd-io-voltage-level = <1800000 1800000>; /*nhnhan: change the voltage
+                                                             level*/
     qcom,vdd-io-current-level = <200 22000>;
-  	qcom,vdd-io-always-on; /*nhnhan*/
+  	qcom,vdd-io-always-on; /*nhnhan: enable vdd-io always on*/
     qcom,vdd-io-lpm-sup; /*nhnhan*/
 
 	  pinctrl-names = "active", "sleep";
 	  pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
 	  pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
 
-    /* cd-gpios = <&tlmm 67 0x1>; */ /*nhnhan*/
-    cd-gpios; /*nhnhan*/
+    cd-gpios = <&tlmm 67 0x0>;
+    //cd-gpios; /*nhnhan*/
     qcom,sdio-customize; /*nhnhan*/
-    qcom,max-frequency = <25000000>; /*nhnhan*/
-    //interrupts = <0 1>; /*nhnhan*/
-    status = "ok"; /*nhnhan*/
+    qcom,max-frequency = <200000000>; /*nhnhan: enable high speed mode*/
+    status = "ok"; /*nhnhan: enable sdhci module in device tree*/
+
+    brcmfi: brcmf@1 {
+		  reg = <1>;
+		  compatible = "brcm,bcm4329-fmac";
+		  interrupt-parent = <&tlmm>;
+      interrupts = <67 0x04>;
+		  interrupt-names = "host-wake";
+	  };
 };
 
 &pm660_gpios {
@@ -142,6 +147,30 @@
 		pinctrl-1 = <&nfc_int_suspend &nfc_disable_suspend>;
 		clocks = <&rpmcc RPM_SMD_BB_CLK2_PIN>;
 		clock-names = "ref_clk";
+	};
+};
+
+&sdc2_cmd_on {
+	config {
+		pins = "sdc2_cmd";
+		bias-pull-up;
+		drive-strength = <10>;
+	};
+};
+
+&sdc2_cmd_off {
+	config {
+		pins = "sdc2_cmd";
+		bias-disable; /* NO pull */
+		drive-strength = <2>;
+	};
+};
+
+&sdc2_data_on {
+	config {
+		pins = "sdc2_data";
+		drive-strength = <10>;
+		bias-pull-up;
 	};
 };
 

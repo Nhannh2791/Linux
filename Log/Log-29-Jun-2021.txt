@@ -1,0 +1,689 @@
+hoki:/ $ su
+hoki:/ # dmesg | grep NHAN 
+[    0.761325] [NHAN][MMC-LOG]: mmc_register_bus
+[    3.334034] [NHAN][MMC-LOG]: mmc_register_driver
+[    3.355403] [NHAN][SDHCI-LOG]: sdhci_msm_probe
+[    3.386847] [NHAN][SDHCI-LOG]: sdhci_msm_vreg_init_reg - Vdd IO name = vdd
+[    3.395269] [NHAN][SDHCI-LOG]: sdhci_msm_vreg_init_reg - Vdd IO name = vdd-io
+[    3.409325] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.418057] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 7 width 1 timing 0
+[    3.438948] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.438964] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.454048] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.454064] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 7 width 1 timing 0
+[    3.459239] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.465787] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.475485] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.478721] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.483272] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.491667] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.495881] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.504610] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 1 Vdd 7 width 1 timing 0
+[    3.510986] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.517524] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.535229] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.535245] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    3.557219] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.558721] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    3.566460] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.571668] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    3.576230] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.584609] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    3.589734] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.597871] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    3.611549] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.614537] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    3.618668] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.627753] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    3.632853] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.640950] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    3.644974] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.654045] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    3.667336] [NHAN][MMC-LOG]: mmc_bus_probe
+[    3.688807] [NHAN][SDHCI-LOG]: sdhci_msm_probe
+[    3.727979] [NHAN][SDHCI-LOG]: sdhci_msm_vreg_init_reg - Vdd IO name = vdd
+[    3.736537] [NHAN][SDHCI-LOG]: sdhci_msm_vreg_init_reg - Vdd IO name = vdd-io
+[    3.750597] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.759696] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    3.778837] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.778853] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    3.781844] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.781943] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.790939] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    3.795005] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    3.810005] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.817276] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    3.821309] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.827985] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.827987] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    3.829581] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.829584] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    3.831371] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.831374] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    3.837140] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    3.850691] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.860041] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    3.872758] [NHAN][MMC-LOG]: mmc_sd_init_card
+[    3.881917] [NHAN][MMC-LOG]: mmc_sd_get_cid
+[    3.895011] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.895015] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    3.910332] [NHAN][MMC-LOG]: mmc_set_ios
+[    3.922279] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.030964] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.035194] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    4.097862] [NHAN][MMC-LOG]: mmc_set_uhs_voltage
+[    4.103973] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.116181] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.147824] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.155337] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.167288] [NHAN][MMC-LOG]: mmc_set_uhs_voltage - err006
+[    4.179913] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.189372] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.200095] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.209250] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.227882] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.233460] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.252509] [NHAN][MMC-LOG]: mmc_sd_get_cid - err003
+[    4.255249] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.270188] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    4.272420] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.281571] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.283120] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.296637] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.307775] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.307777] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.307781] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.381847] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.387800] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.414572] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.455720] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.476009] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.477435] [NHAN][MMC-LOG]: mmc_sd_init_card
+[    4.479940] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    4.484003] [NHAN][MMC-LOG]: mmc_sd_get_cid
+[    4.497488] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.501476] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    4.503696] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.512673] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.514223] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.543633] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.550943] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.555969] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.560942] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.572736] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.573413] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.595443] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.602724] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.626257] [NHAN][MMC-LOG]: mmc_sd_init_card
+[    4.626279] [NHAN][MMC-LOG]: mmc_sd_get_cid
+[    4.629605] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.633575] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    4.639990] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.646857] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.652337] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.661851] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.664826] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.669792] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.674721] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.686632] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.687220] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.708786] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.708803] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.722872] [NHAN][MMC-LOG]: mmc_sd_init_card
+[    4.722888] [NHAN][MMC-LOG]: mmc_sd_get_cid
+[    4.726191] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.730201] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    4.736580] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.743477] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.748923] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.758433] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.761459] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.766384] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.771341] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.782958] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.783830] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.788767] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.796331] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    4.805394] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.808928] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.824122] [NHAN][MMC-LOG]: mmc_sd_init_card
+[    4.824137] [NHAN][MMC-LOG]: mmc_sd_get_cid
+[    4.827440] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.831447] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    4.837825] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.844751] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.850170] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.859688] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.862686] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.867633] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.872590] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    4.884196] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.885080] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    4.906655] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.906671] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.925126] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.930517] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    4.934958] [NHAN][MMC-LOG]: mmc_set_ios
+[    4.943537] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    5.076695] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.076719] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    5.398829] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.398854] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    5.404863] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.410259] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    5.858897] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.858919] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    5.861989] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.871046] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    5.877000] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.884119] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    5.889685] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.897205] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    5.901269] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.910330] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    5.915744] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.923445] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    5.927647] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.936627] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    5.940860] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.949931] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    5.955084] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.963103] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    5.967143] [NHAN][MMC-LOG]: mmc_set_ios
+[    5.976209] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    6.018803] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.018825] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    6.038804] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.038827] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    6.054030] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.054053] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    6.059280] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.066225] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    6.077391] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.079207] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    6.083667] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.092234] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    6.379094] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.379116] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    6.382197] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.391218] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    6.396554] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.404423] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    6.408548] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.417505] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    6.423102] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.430625] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    6.435678] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.443727] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    6.768786] [NHAN][MMC-LOG]: mmc_set_ios
+[    6.768810] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    7.138860] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.141250] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    7.163059] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.163083] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    7.178211] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.178233] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    7.183526] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.190349] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    7.203671] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.210304] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    7.215351] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.223344] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    7.227841] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.236425] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    7.340120] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.346301] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    7.350504] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.359563] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    7.364729] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.372600] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    7.378175] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.385712] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    7.389782] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.398815] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    7.403650] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.411930] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    7.416148] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.425117] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    7.429338] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.438386] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    7.443455] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.451592] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    7.455631] [NHAN][MMC-LOG]: mmc_set_ios
+[    7.464746] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    8.178282] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.178305] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    8.181448] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.190446] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    8.196352] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.203720] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    8.207725] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.216825] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.220791] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.237254] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.258857] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.258875] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    8.279401] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.279419] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    8.294481] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.294498] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    8.299692] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.306571] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    8.329785] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.329944] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.335649] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    8.336199] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.339664] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    8.343125] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.343561] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    8.352678] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 7 width 1 timing 0
+[    8.370956] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.386099] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.402167] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.402184] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.405196] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.413930] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 1 Vdd 7 width 1 timing 0
+[    8.420310] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.426841] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.512516] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.512533] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.519090] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.524257] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    8.531988] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.537190] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.541807] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.550137] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.555292] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.563438] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    8.567677] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.576634] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    8.580851] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.589897] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    8.594941] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.603097] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    8.607136] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.616207] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    8.635390] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.652566] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    8.656748] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.665856] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    8.671004] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.679070] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    8.683150] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.692219] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.696182] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.705298] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.782941] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.788659] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    8.796212] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.801131] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 7 width 1 timing 0
+[    8.823422] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.823439] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.838356] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.838373] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.841419] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.850108] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 1 Vdd 7 width 1 timing 0
+[    8.856498] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.863071] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.926033] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.926049] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 1 timing 0
+[    8.932645] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.937772] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    8.945535] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.950719] [NHAN][MMC-LOG]: mmc0: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.955288] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.963671] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    8.968697] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.976950] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    8.981243] [NHAN][MMC-LOG]: mmc_set_ios
+[    8.990139] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    8.994348] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.003418] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.008558] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.016612] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    9.020663] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.029723] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    9.055055] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.063069] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.067070] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.076145] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.081454] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.089275] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.093401] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.102425] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.108018] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.115556] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    9.120564] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.128573] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    9.368901] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.368924] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.372496] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.378869] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.384993] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[    9.388816] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.398872] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.406814] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.412529] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.419837] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    9.423365] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.423875] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.433024] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    9.436897] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[    9.450927] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.453024] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.459052] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    9.463111] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[    9.467199] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.478419] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.485560] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.489455] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    9.493392] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.507926] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.511788] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.515629] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[    9.521385] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.537996] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    9.538001] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.541848] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.550883] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[    9.554952] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[    9.912046] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.912068] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.915143] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.924163] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[    9.929523] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.937333] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.941499] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.950451] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[    9.956032] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.963573] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[    9.968443] [NHAN][MMC-LOG]: mmc_set_ios
+[    9.976675] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   10.180649] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.180672] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   10.183751] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.192887] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   10.198217] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.205968] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   10.211526] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.219023] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   10.223072] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.232125] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   10.237162] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.245274] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   10.249529] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.258376] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   10.262774] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.271671] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   10.276865] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.284866] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   10.288919] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.297949] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   10.588826] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.597837] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   10.635424] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.636497] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   10.692276] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.692300] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   10.699832] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.704425] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   10.784400] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.807333] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   10.849549] [NHAN][MMC-LOG]: mmc_set_ios
+[   10.874269] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   11.938845] [NHAN][MMC-LOG]: mmc_set_ios
+[   11.938852] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   11.959889] [NHAN][MMC-LOG]: mmc_set_ios
+[   11.959897] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   11.972153] [NHAN][MMC-LOG]: mmc_set_ios
+[   11.972160] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   11.974416] [NHAN][MMC-LOG]: mmc_set_ios
+[   11.974423] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   11.980237] [NHAN][MMC-LOG]: mmc_set_ios
+[   11.980244] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   12.001119] [NHAN][MMC-LOG]: mmc_set_ios
+[   12.001127] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   13.058876] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.062472] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   13.081050] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.081061] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   13.093697] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.093708] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   13.097497] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.097509] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   13.104859] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.104868] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   13.105464] [NHAN][MMC-LOG]: mmc_set_ios
+[   13.105469] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   14.098847] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.098857] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   14.117421] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.117428] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   14.129540] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.129546] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   14.131760] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.131763] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   14.137477] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.137483] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   14.138036] [NHAN][MMC-LOG]: mmc_set_ios
+[   14.138040] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   15.138886] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.138896] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   15.157183] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.157191] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   15.169401] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.169408] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   15.171673] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.171682] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   15.178080] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.178087] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   15.178636] [NHAN][MMC-LOG]: mmc_set_ios
+[   15.178639] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   16.178890] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.178902] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   16.198192] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.198202] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   16.210051] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.210063] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   16.212362] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.212373] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   16.218876] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.218887] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   16.219509] [NHAN][MMC-LOG]: mmc_set_ios
+[   16.219520] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   17.218819] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.218825] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   17.236545] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.236552] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   17.248821] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.248835] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   17.251132] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.251139] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   17.256749] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.256756] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   17.257294] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.257297] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   17.768893] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.768900] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   17.769013] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.769016] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   17.771218] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.771222] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   17.771335] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.771338] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   17.773344] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.773350] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   17.775259] [NHAN][MMC-LOG]: mmc_set_ios
+[   17.775265] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   18.068853] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.068859] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.068962] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.068965] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.070490] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.070493] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.072081] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.072084] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   18.072132] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.072135] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   18.073437] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.073440] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   18.073590] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.073593] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.073637] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.073639] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.075052] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.075055] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   18.075103] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.075106] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   18.258973] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.258982] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   18.268887] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.268893] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.269005] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.269008] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.270692] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.270697] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.270810] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.270814] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.272433] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.272437] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   18.274463] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.274469] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   18.277325] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.277329] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   18.289551] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.289559] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   18.291801] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.291806] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   18.299224] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.299232] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   18.299778] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.299782] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   18.588845] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.588854] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   18.594757] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.594766] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   18.670187] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.670194] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.670310] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.670314] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.672629] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.672636] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   18.674290] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.674297] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   18.674372] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.674376] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   18.676387] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.676394] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   18.676641] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.676648] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.676740] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.676744] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   18.678995] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.679002] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   18.679123] [NHAN][MMC-LOG]: mmc_set_ios
+[   18.679126] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   19.298837] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.298843] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   19.316431] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.316438] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   19.330779] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.330786] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   19.334476] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.334482] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   19.340286] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.340293] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   19.340873] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.340878] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   19.578961] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.578967] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   19.579108] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.579112] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   19.581330] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.581337] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   19.581455] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.581459] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   19.583077] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.583081] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   19.584734] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.584740] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   19.678901] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.678907] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   19.679018] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.679020] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   19.681262] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.681268] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   19.682854] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.682857] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   19.682907] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.682910] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 9
+[   19.684883] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.684885] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   19.685028] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.685031] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   19.685074] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.685077] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   19.687074] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.687077] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   19.687126] [NHAN][MMC-LOG]: mmc_set_ios
+[   19.687129] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 10
+[   20.338819] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.338826] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   20.356884] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.356891] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   20.369018] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.369025] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   20.371262] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.371265] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   20.376716] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.376722] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   20.377260] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.377263] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+[   20.788911] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.788917] [NHAN][MMC-LOG]: mmc0: clock 200000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   20.789031] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.789034] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 0
+[   20.790480] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.790483] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   20.790596] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.790600] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 1
+[   20.792188] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.792192] [NHAN][MMC-LOG]: mmc0: clock 26000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   20.793486] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.793490] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   20.988773] [NHAN][MMC-LOG]: mmc_set_ios
+[   20.988782] [NHAN][MMC-LOG]: mmc0: clock 0Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   21.354550] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.354561] [NHAN][MMC-LOG]: mmc0: clock 52000000Hz busmode 2 powermode 2 cs 0 Vdd 7 width 8 timing 8
+[   21.378894] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.378903] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 1 cs 0 Vdd 18 width 1 timing 0
+[   21.397706] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.397714] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   21.409816] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.409823] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 18 width 1 timing 0
+[   21.412078] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.412087] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   21.417655] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.417662] [NHAN][MMC-LOG]: mmc1: clock 400000Hz busmode 1 powermode 2 cs 0 Vdd 18 width 1 timing 0
+[   21.418258] [NHAN][MMC-LOG]: mmc_set_ios
+[   21.418263] [NHAN][MMC-LOG]: mmc1: clock 0Hz busmode 2 powermode 0 cs 0 Vdd 0 width 1 timing 0
+hoki:/ # dmesg | grep NHAN | grep err                                                                                                                                                                       
+[    4.167288] [NHAN][MMC-LOG]: mmc_set_uhs_voltage - err006
+[    4.252509] [NHAN][MMC-LOG]: mmc_sd_get_cid - err003
+[    4.283120] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.296637] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.307775] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.514223] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.543633] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.550943] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.652337] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.661851] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.664826] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.748923] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.758433] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.761459] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+[    4.850170] [NHAN][MMC-LOG]: mmc_sd_get_cid - err001
+[    4.859688] [NHAN][MMC-LOG]: mmc_sd_get_cid - err002
+[    4.862686] [NHAN][MMC-LOG]: mmc_sd_init_card - err001
+hoki:/ # 
+
