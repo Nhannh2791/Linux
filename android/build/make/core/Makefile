@@ -1185,7 +1185,12 @@ endef
 # $(3): mount point
 # $(4): staging dir
 # Depmod requires a well-formed kernel version so 0.0 is used as a placeholder.
+CY_WIFI_BACKPORT_SRC_PATH := vendor/cypress/backports-wireless
+KERNEL_OUT := ../kernel/out/android-msm-hoki-4.14/private/msm-fossil-cw
 define build-image-kernel-modules
+    $(MAKE) -C $(CY_WIFI_BACKPORT_SRC_PATH) KLIB=$(PWD)/$(CY_WIFI_BACKPORT_SRC_PATH)/klib KLIB_BUILD=$(PWD)/$(KERNEL_OUT) CC=gcc defconfig-brcmfmac
+    $(MAKE) -C $(CY_WIFI_BACKPORT_SRC_PATH) KLIB=$(PWD)/$(CY_WIFI_BACKPORT_SRC_PATH)/klib KLIB_BUILD=$(PWD)/$(KERNEL_OUT) CC=gcc oldconfig
+    $(MAKE) -C $(CY_WIFI_BACKPORT_SRC_PATH) KLIB=$(PWD)/$(CY_WIFI_BACKPORT_SRC_PATH)/klib KLIB_BUILD=$(PWD)/$(KERNEL_OUT) ARCH=arm CROSS_COMPILE=arm-linux-androidkernel- modules
     $(hide) rm -rf $(2)/lib/modules
     $(hide) mkdir -p $(2)/lib/modules
     $(hide) cp $(1) $(2)/lib/modules/

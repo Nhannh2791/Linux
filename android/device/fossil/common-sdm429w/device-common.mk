@@ -366,6 +366,13 @@ PRODUCT_COPY_FILES += \
     device/fossil/common-sdm429w/wlan/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
     device/fossil/common-sdm429w/wlan/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
 
+PRODUCT_COPY_FILES += \
+    vendor/cypress/firmware/sta/brcmfmac43012-sdio.bin:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.bin \
+    vendor/cypress/firmware/sta/brcmfmac43012-sdio.clm_blob:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.clm_blob \
+    vendor/cypress/firmware/ap/brcmfmac43012-sdio.bin:vendor/firmware/brcmfmac/ap/brcmfmac43012-sdio.bin \
+    vendor/cypress/firmware/ap/brcmfmac43012-sdio.clm_blob:vendor/firmware/brcmfmac/ap/brcmfmac43012-sdio.clm_blob \
+    vendor/cypress/nvram/brcmfmac43012-sdio.txt:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.txt
+
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \

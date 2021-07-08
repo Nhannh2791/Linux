@@ -44,9 +44,16 @@ BOARD_COMMON_DIR := device/fossil/common-8x09/common
 TARGET_BOARD_PLATFORM := msm8909
 
 BOARD_DISPLAY_HAL := hardware/qcom/display/msm8909
-BOARD_BT_HAL := hardware/qcom/bt/msm8909
-BOARD_WLAN_HAL := hardware/qcom/wlan
+#BOARD_BT_HAL := hardware/qcom/bt/msm8909
+#BOARD_WLAN_HAL := hardware/qcom/wlan
 BOARD_OPENSOURCE_DIR := device/fossil/common-8x09
+WIFI_VENDOR_CYPRESS_PATH := vendor/cypress
+PRODUCT_COPY_FILES += \
+    $(WIFI_VENDOR_CYPRESS_PATH)/firmware/sta/brcmfmac43012-sdio.bin:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.bin \
+    $(WIFI_VENDOR_CYPRESS_PATH)/firmware/sta/brcmfmac43012-sdio.clm_blob:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.clm_blob \
+    $(WIFI_VENDOR_CYPRESS_PATH)/firmware/ap/brcmfmac43012-sdio.bin:vendor/firmware/brcmfmac/ap/brcmfmac43012-sdio.bin \
+    $(WIFI_VENDOR_CYPRESS_PATH)/firmware/ap/brcmfmac43012-sdio.clm_blob:vendor/firmware/brcmfmac/ap/brcmfmac43012-sdio.clm_blob \
+    $(WIFI_VENDOR_CYPRESS_PATH)/nvram/brcmfmac43012-sdio.txt:vendor/firmware/brcmfmac/sta/brcmfmac43012-sdio.txt
 
 TARGET_SUPPORTS_WEARABLES := true
 

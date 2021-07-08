@@ -119,7 +119,8 @@ KASLRSEED_SUPPORT := true
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/fossil/$(TARGET_DEVICE)-kernel/*.ko)
 
 #BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
-BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive enforcing=0 androidboot.dm_verity=disabled 
+BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.bootdevice=7864900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive enforcing=0 androidboot.dm_verity=disabled
+BOARD_KERNEL_CMDLINE += enforcing=0 androidboot.selinux=permissive androidboot.dm_verity=disabled 
 
 ifeq ($(TARGET_BUILD_VARIANT), user)
     BOARD_KERNEL_CMDLINE += console=/dev/null androidboot.console=/dev/null

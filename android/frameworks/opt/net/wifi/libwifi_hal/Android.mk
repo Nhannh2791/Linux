@@ -101,6 +101,8 @@ else ifeq ($(BOARD_WLAN_DEVICE), MediaTek)
   LIB_WIFI_HAL := libwifi-hal-mt66xx
 else ifeq ($(BOARD_WLAN_DEVICE), emulator)
   LIB_WIFI_HAL := libwifi-hal-emu
+else ifeq ($(BOARD_WLAN_DEVICE), brcmfmac)
+  LIB_WIFI_HAL := libwifi-hal-bcm
 endif
 
 # The WiFi HAL that you should be linking.
