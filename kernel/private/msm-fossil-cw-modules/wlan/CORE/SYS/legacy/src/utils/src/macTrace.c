@@ -46,9 +46,9 @@
 
 #include "wlan_hdd_assoc.h"
 #include "wlan_hdd_main.h"
-//#ifdef CONFIG_CFG80211 nhnhan
+/* #ifdef CONFIG_CFG80211 */ /*nhnhan: remove pre-compile to load header */
 #include "wlan_hdd_p2p.h"
-//#endif nhnhan
+/* #endif */ /*nhnhan*/
 #include "csrNeighborRoam.h"
 #include "csrInternal.h"
 #include "limGlobal.h"

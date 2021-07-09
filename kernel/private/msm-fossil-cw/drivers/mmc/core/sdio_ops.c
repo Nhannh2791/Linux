@@ -31,11 +31,17 @@ int mmc_send_io_op_cond(struct mmc_host *host, u32 ocr, u32 *rocr)
 	for (i = 100; i; i--) {
 		err = mmc_wait_for_cmd(host, &cmd, MMC_CMD_RETRIES);
 		if (err)
+    {
+	    printk("[NHAN][MMC-LOG] %s: mmc_send_io_op_cond - error001\n", mmc_hostname(host)); /*nhnhan*/
 			break;
+    }
 
 		/* if we're just probing, do a single pass */
 		if (ocr == 0)
+    {
+	    printk("[NHAN][MMC-LOG] %s: mmc_send_io_op_cond - error002\n", mmc_hostname(host)); /*nhnhan*/
 			break;
+    }
 
 		/* otherwise wait until reset completes */
 		if (mmc_host_is_spi(host)) {

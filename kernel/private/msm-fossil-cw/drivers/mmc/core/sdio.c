@@ -1204,7 +1204,10 @@ int mmc_attach_sdio(struct mmc_host *host)
 
 	err = mmc_send_io_op_cond(host, 0, &ocr);
 	if (err)
+  {
+	  printk("[NHAN][MMC-LOG] %s: mmc_attach_sdio - error001\n", mmc_hostname(host)); /*nhnhan*/
 		return err;
+  }
 
 	mmc_attach_bus(host, &mmc_sdio_ops);
 	if (host->ocr_avail_sdio)

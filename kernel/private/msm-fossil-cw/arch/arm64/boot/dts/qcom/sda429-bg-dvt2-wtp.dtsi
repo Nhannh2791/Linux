@@ -25,7 +25,7 @@
     };
 
 
-//  	qcom,wcnss-wlan@0a000000 { /*nhnhan*/
+//    qcom,wcnss-wlan@0a000000 { /*nhnhan*/
 //       status = "disabled";
 //    };
 
@@ -43,9 +43,9 @@
         status = "okay";
         regulator-name = "wlreg_on";
         enable-active-high;
-        gpio = <&tlmm 58 1>;
+        gpio = <&tlmm 58 0>;
         startup-delay-us = <100>;
-        /* regulator-always-on; */
+        regulator-always-on;
     };
 
     brcmfmac: brcmfmac@0 { /*nhnhan: enable driver of brcm */
@@ -55,35 +55,35 @@
     };
 };
 &sdhc_1 {
-	  /* device core power supply */
-	  vdd-supply = <&L19A>;
-	  qcom,vdd-voltage-level = <2900000 3200000>;
-	  qcom,vdd-current-level = <200 570000>;
+    /* device core power supply */
+    vdd-supply = <&L19A>;
+    qcom,vdd-voltage-level = <2900000 3200000>;
+    qcom,vdd-current-level = <200 570000>;
 
-	  /* device communication power supply */
-	  vdd-io-supply = <&L13A>;
-	  qcom,vdd-io-always-on;
-	  qcom,vdd-io-lpm-sup;
-	  qcom,vdd-io-voltage-level = <1800000 1800000>;
-	  qcom,vdd-io-current-level = <0 60000>;
+    /* device communication power supply */
+    vdd-io-supply = <&L13A>;
+    qcom,vdd-io-always-on;
+    qcom,vdd-io-lpm-sup;
+    qcom,vdd-io-voltage-level = <1800000 1800000>;
+    qcom,vdd-io-current-level = <0 60000>;
 
-	  pinctrl-names = "active", "sleep";
-	  pinctrl-0 = <&sdc1_clk_on &sdc1_cmd_on &sdc1_data_on &sdc1_rclk_on>;
-	  pinctrl-1 = <&sdc1_clk_off &sdc1_cmd_off &sdc1_data_off &sdc1_rclk_off>;
+    pinctrl-names = "active", "sleep";
+    pinctrl-0 = <&sdc1_clk_on &sdc1_cmd_on &sdc1_data_on &sdc1_rclk_on>;
+    pinctrl-1 = <&sdc1_clk_off &sdc1_cmd_off &sdc1_data_off &sdc1_rclk_off>;
 
-	  status = "ok";
+    status = "ok";
 };
 
 &sdhc_2 {
 
     qcom,core_3_0v_support; /*nhnhan*/
-	  /* device core power supply for sd card*/
-	  vdd-supply = <&vreg_sd_vdd>;
-	  qcom,vdd-voltage-level = <2950000 2950000>;
-	  qcom,vdd-current-level = <15000 800000>;
+    /* device core power supply for sd card*/
+    vdd-supply = <&vreg_sd_vdd>;
+    qcom,vdd-voltage-level = <2950000 2950000>;
+    qcom,vdd-current-level = <15000 800000>;
 
-	  /* device communication power supply for msm_io*/
-	  /* vdd-io-supply = <&vreg_sd_pad>; */ /*nhnhan: change vdd-io-supply*/
+    /* device communication power supply for msm_io*/
+    /* vdd-io-supply = <&vreg_sd_pad>; */ /*nhnhan: change vdd-io-supply*/
 
     vdd-io-supply = <&vsdc2>;  /*nhnhan: enable vdd-io supply by
                                          regulator-fixed gpio63 */
@@ -91,12 +91,12 @@
     qcom,vdd-io-voltage-level = <1800000 1800000>; /*nhnhan: change the voltage
                                                              level*/
     qcom,vdd-io-current-level = <200 22000>;
-  	qcom,vdd-io-always-on; /*nhnhan: enable vdd-io always on*/
+    qcom,vdd-io-always-on; /*nhnhan: enable vdd-io always on*/
     qcom,vdd-io-lpm-sup; /*nhnhan*/
 
-	  pinctrl-names = "active", "sleep";
-	  pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
-	  pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
+    pinctrl-names = "active", "sleep";
+    pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
+    pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
 
     cd-gpios = <&tlmm 67 0x0>;
     //cd-gpios; /*nhnhan*/
@@ -104,73 +104,73 @@
     qcom,max-frequency = <200000000>; /*nhnhan: enable high speed mode*/
     status = "ok"; /*nhnhan: enable sdhci module in device tree*/
 
-    brcmfi: brcmf@1 {
-		  reg = <1>;
-		  compatible = "brcm,bcm4329-fmac";
-		  interrupt-parent = <&tlmm>;
+    brcmfi: brcmf@1 { /*nhnhan: add interrupt to host-wake*/
+      reg = <1>;
+      compatible = "brcm,bcm4329-fmac";
+      interrupt-parent = <&tlmm>;
       interrupts = <67 0x04>;
-		  interrupt-names = "host-wake";
-	  };
+      interrupt-names = "host-wake";
+    };
 };
 
 &pm660_gpios {
-	nfc_clk {
-		nfc_clk_default: nfc_clk_default {
-			pins = "gpio4";
-			function = "normal";
-			input-enable;
-			power-source = <1>;
-		};
-	};
+  nfc_clk {
+    nfc_clk_default: nfc_clk_default {
+      pins = "gpio4";
+      function = "normal";
+      input-enable;
+      power-source = <1>;
+    };
+  };
 };
 
 &i2c_5 { /* BLSP2 QUP1 (NFC) */
-	#address-cells = <1>;
-	#size-cells = <0>;
+  #address-cells = <1>;
+  #size-cells = <0>;
 
-	status = "disabled";
-	nq@28 {
-		compatible = "qcom,nq-nci";
-		reg = <0x28>;
-		qcom,nq-irq = <&tlmm 17 0x00>;
-		qcom,nq-ven = <&tlmm 16 0x00>;
-		qcom,nq-firm = <&tlmm 130 0x00>;
-		qcom,nq-clkreq = <&pm660_gpios 4 0x00>;
-		qcom,nq-esepwr = <&tlmm 93 0x00>;
-		interrupt-parent = <&tlmm>;
-		qcom,clk-src = "BBCLK2";
-		interrupts = <17 0>;
-		interrupt-names = "nfc_irq";
-		pinctrl-names = "nfc_active", "nfc_suspend";
-		pinctrl-0 = <&nfc_int_active &nfc_disable_active
-						&nfc_clk_default>;
-		pinctrl-1 = <&nfc_int_suspend &nfc_disable_suspend>;
-		clocks = <&rpmcc RPM_SMD_BB_CLK2_PIN>;
-		clock-names = "ref_clk";
-	};
+  status = "disabled";
+  nq@28 {
+    compatible = "qcom,nq-nci";
+    reg = <0x28>;
+    qcom,nq-irq = <&tlmm 17 0x00>;
+    qcom,nq-ven = <&tlmm 16 0x00>;
+    qcom,nq-firm = <&tlmm 130 0x00>;
+    qcom,nq-clkreq = <&pm660_gpios 4 0x00>;
+    qcom,nq-esepwr = <&tlmm 93 0x00>;
+    interrupt-parent = <&tlmm>;
+    qcom,clk-src = "BBCLK2";
+    interrupts = <17 0>;
+    interrupt-names = "nfc_irq";
+    pinctrl-names = "nfc_active", "nfc_suspend";
+    pinctrl-0 = <&nfc_int_active &nfc_disable_active
+            &nfc_clk_default>;
+    pinctrl-1 = <&nfc_int_suspend &nfc_disable_suspend>;
+    clocks = <&rpmcc RPM_SMD_BB_CLK2_PIN>;
+    clock-names = "ref_clk";
+  };
 };
 
 &sdc2_cmd_on {
-	config {
-		pins = "sdc2_cmd";
-		bias-pull-up;
-		drive-strength = <10>;
-	};
+  config {
+    pins = "sdc2_cmd";
+    bias-pull-up;
+    drive-strength = <10>;
+  };
 };
 
 &sdc2_cmd_off {
-	config {
-		pins = "sdc2_cmd";
-		bias-disable; /* NO pull */
-		drive-strength = <2>;
-	};
+  config {
+    pins = "sdc2_cmd";
+    bias-disable; /* NO pull */
+    drive-strength = <2>;
+  };
 };
 
 &sdc2_data_on {
-	config {
-		pins = "sdc2_data";
-		drive-strength = <10>;
-		bias-pull-up;
-	};
+  config {
+    pins = "sdc2_data";
+    drive-strength = <10>;
+    bias-pull-up;
+  };
 };
 

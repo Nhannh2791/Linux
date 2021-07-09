@@ -2001,12 +2001,14 @@ int mmc_wait_for_cmd(struct mmc_host *host, struct mmc_command *cmd, int retries
 
 	memset(cmd->resp, 0, sizeof(cmd->resp));
 	cmd->retries = retries;
+  printk("[NHAN][MMC-LOG] %s: mmc_wait_for_cmd\n", mmc_hostname(host)); /*nhnhan*/
 
 	mrq.cmd = cmd;
 	cmd->data = NULL;
 
 	mmc_wait_for_req(host, &mrq);
 
+  printk("[NHAN][MMC-LOG] %s: mmc_wait_for_cmd - err: %d\n", mmc_hostname(host), cmd->error); /*nhnhan*/
 	return cmd->error;
 }
 
@@ -4219,6 +4221,8 @@ static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
 {
 	host->f_init = freq;
 
+  printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq", mmc_hostname(host)); /*nhnhan*/
+
 	pr_debug("%s: %s: trying to init card at %u Hz\n",
 		mmc_hostname(host), __func__, host->f_init);
 
@@ -4237,26 +4241,46 @@ static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
 	 * Skip it if we already know that we do not support SDIO commands
 	 */
 	if (!(host->caps2 & MMC_CAP2_NO_SDIO))
+  {
+    printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, sdio_reset", mmc_hostname(host)); /*nhnhan*/
 		sdio_reset(host);
+  }
 
 	mmc_go_idle(host);
 
 	if (!(host->caps2 & MMC_CAP2_NO_SD))
-		mmc_send_if_cond(host, host->ocr_avail);
-
+  {
+    printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, mmc_send_if_cond", mmc_hostname(host)); /*nhnhan*/
+    mmc_send_if_cond(host, host->ocr_avail);
+  }
 	/* Order's important: probe SDIO, then SD, then MMC */
 	if (!(host->caps2 & MMC_CAP2_NO_SDIO))
+  {
+    printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, sdio attach", mmc_hostname(host)); /*nhnhan*/
 		if (!mmc_attach_sdio(host))
+    {
+      printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, sdio attach fail", mmc_hostname(host)); /*nhnhan*/
 			return 0;
-
+    }
+  }
 	if (!(host->caps2 & MMC_CAP2_NO_SD))
+  {
+    printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, sd attach", mmc_hostname(host)); /*nhnhan*/
 		if (!mmc_attach_sd(host))
+    {
+      printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, sd attach fail", mmc_hostname(host)); /*nhnhan*/
 			return 0;
-
+    }
+  }
 	if (!(host->caps2 & MMC_CAP2_NO_MMC))
+  {
+    printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, mmc attach", mmc_hostname(host)); /*nhnhan*/
 		if (!mmc_attach_mmc(host))
+    {
+      printk("[NHAN][MMC-LOG] %s: mmc_rescan_try_freq, mmc attach fail", mmc_hostname(host)); /*nhnhan*/
 			return 0;
-
+    }
+  }
 	mmc_power_off(host);
 	return -EIO;
 }
