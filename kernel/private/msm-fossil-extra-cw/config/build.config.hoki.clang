@@ -5,7 +5,7 @@ BRANCH=android-msm-hoki-4.14
 DEFCONFIG=hoki-perf_defconfig
 PREBUILT_KERNEL_REPO=device/fossil/hoki-kernel
 KERNEL_BUILD_BRANCH=android-msm-hoki-4.14
-#SKIP_MRPROPER=1
+SKIP_MRPROPER=1
 
 CC=${CLANG_PREBUILT_BIN}/clang
 

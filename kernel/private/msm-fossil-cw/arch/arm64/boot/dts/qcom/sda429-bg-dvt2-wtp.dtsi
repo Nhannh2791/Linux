@@ -25,9 +25,9 @@
     };
 
 
-//    qcom,wcnss-wlan@0a000000 { /*nhnhan*/
-//       status = "disabled";
-//    };
+    qcom,wcnss-wlan@0a000000 { /*nhnhan*/
+       status = "disabled";
+    };
 
     vsdc2: regulator_sdio { /*nhnhan: enable SD_ELDO_EN */
         compatible = "regulator-fixed";
@@ -43,7 +43,7 @@
         status = "okay";
         regulator-name = "wlreg_on";
         enable-active-high;
-        gpio = <&tlmm 58 0>;
+        gpio = <&tlmm 109 0>;
         startup-delay-us = <100>;
         regulator-always-on;
     };
@@ -94,6 +94,9 @@
     qcom,vdd-io-always-on; /*nhnhan: enable vdd-io always on*/
     qcom,vdd-io-lpm-sup; /*nhnhan*/
 
+    qcom,clk-rates = <400000>; // 25000000 50000000 80000000 40000000>;
+    //qcom,bus-speed-mode = "SDR12", "SDR25", "SDR50", "DDR50";
+
     pinctrl-names = "active", "sleep";
     pinctrl-0 = <&sdc2_clk_on &sdc2_cmd_on &sdc2_data_on &sdc2_cd_on>;
     pinctrl-1 = <&sdc2_clk_off &sdc2_cmd_off &sdc2_data_off &sdc2_cd_off>;
@@ -101,7 +104,8 @@
     cd-gpios = <&tlmm 67 0x0>;
     //cd-gpios; /*nhnhan*/
     qcom,sdio-customize; /*nhnhan*/
-    qcom,max-frequency = <200000000>; /*nhnhan: enable high speed mode*/
+    //qcom,max-frequency = <50000000>; /*nhnhan: enable high speed mode*/
+    qcom,devfreq,freq-table = <400000>; //<50000000>;
     status = "ok"; /*nhnhan: enable sdhci module in device tree*/
 
     brcmfi: brcmf@1 { /*nhnhan: add interrupt to host-wake*/
