@@ -117,9 +117,14 @@ KASLRSEED_SUPPORT := true
 
 #TARGET_USES_AOSP := true
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/fossil/$(TARGET_DEVICE)-kernel/*.ko)
+WIFI_VENDOR_CYPRESS_PATH := vendor/cypress
+CY_WIFI_BACKPORT_SRC_PATH  := $(WIFI_VENDOR_CYPRESS_PATH)/backports-wireless
+BOARD_VENDOR_KERNEL_MODULES += $(CY_WIFI_BACKPORT_SRC_PATH)/compat/compat.ko $(CY_WIFI_BACKPORT_SRC_PATH)/net/wireless/cfg80211.ko $(CY_WIFI_BACKPORT_SRC_PATH)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko $(CY_WIFI_BACKPORT_SRC_PATH)/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko
+$(warning $(BOARD_VENDOR_KERNEL_MODULES))
+
 
 #BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
-BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.bootdevice=7864900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive enforcing=0 androidboot.dm_verity=disabled
+BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive enforcing=0 androidboot.dm_verity=disabled
 BOARD_KERNEL_CMDLINE += enforcing=0 androidboot.selinux=permissive androidboot.dm_verity=disabled 
 
 ifeq ($(TARGET_BUILD_VARIANT), user)

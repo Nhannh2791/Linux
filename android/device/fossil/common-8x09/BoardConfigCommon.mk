@@ -89,7 +89,6 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USE_KINGFISHER_OPTIMIZATION := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_DEVICE) msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += enforcing=0 androidboot.selinux=permissive androidboot.dm_verity=disabled
 
 ifeq ($(TARGET_BUILD_VARIANT), user)
     BOARD_KERNEL_CMDLINE += console=/dev/null androidboot.console=/dev/null

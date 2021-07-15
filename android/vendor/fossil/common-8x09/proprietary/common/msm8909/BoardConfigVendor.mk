@@ -75,30 +75,7 @@ LW_FEATURE_SET := true
 endif
 #END
 
-#BOARD_HAS_QCOM_WLAN := true
-BOARD_WLAN_VENDOR   := cypress
-BOARD_WLAN_DEVICE   := brcmfmac
-WIFI_VENDOR_CYPRESS_PATH := vendor/cypress
-ifeq ($(BOARD_WLAN_VENDOR),cypress)
- WPA_SUPPLICANT_VERSION                      := VER_0_8_X
- BOARD_WPA_SUPPLICANT_DRIVER                 := NL80211
- BOARD_HOSTAPD_DRIVER                        := NL80211
- BOARD_HOSTAPD_PRIVATE_LIB_BCM               := lib_driver_cmd_bcmdhd
- BOARD_WPA_SUPPLICANT_PRIVATE_LIB_BCM        := lib_driver_cmd_bcmdhd
- WIFI_DRIVER_FW_PATH_STA                     := "/vendor/firmware/brcmfmac/sta"
- WIFI_DRIVER_FW_PATH_P2P                     := "/vendor/firmware/brcmfmac/sta"
- WIFI_DRIVER_FW_PATH_AP                      := "/vendor/firmware/brcmfmac/ap"
- WIFI_DRIVER_FW_PATH_PARAM                   := "/sys/module/brcmfmac/parameters/brcmf_firmware_path"
- CY_WIFI_BACKPORT_SRC_PATH                   := "$(WIFI_VENDOR_CYPRESS_PATH)/backports-wireless"
- BOARD_VENDOR_KERNEL_MODULES += \
-				$(CY_WIFI_BACKPORT_SRC_PATH)/compat/compat.ko \
-				$(CY_WIFI_BACKPORT_SRC_PATH)/net/wireless/cfg80211.ko \
-				$(CY_WIFI_BACKPORT_SRC_PATH)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko \
-				$(CY_WIFI_BACKPORT_SRC_PATH)/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko
-
-endif
-
-
+BOARD_HAS_QCOM_WLAN := true
 ifneq ($(wildcard $(QCPATH)/mdm-helper/libmdmdetect),)
  CONFIG_EAP_PROXY_MDM_DETECT := true
 endif
